@@ -7,10 +7,10 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 /**
- * @title SimpleNFT
- * SimpleNFT - Base smart contract using ERC-721 Standard
+ * @title BedNBeer
+ * BedNBeer - Base smart contract using ERC-721 Standard
  */
-contract SimpleNFT is ERC721, ERC721URIStorage, Ownable {
+contract BedNBeer is ERC721, ERC721URIStorage, Ownable {
     mapping(string => address) public _creatorsMapping;
     mapping(uint256 => string) public _tokenIdsMapping;
     mapping(uint256 => uint256) public _wenData;
@@ -77,7 +77,7 @@ contract SimpleNFT is ERC721, ERC721URIStorage, Ownable {
     function mint(string memory _tokenURI, uint256 wen) public payable {
         require(
             !nftExists(_tokenURI),
-            "SimpleNFT: Trying to mint existent nft"
+            "BedNBeer: Trying to mint existent nft"
         );
         require(msg.value > 0, "Must send something");
         uint256 id = mintTo(msg.sender, _tokenURI);
@@ -93,7 +93,7 @@ contract SimpleNFT is ERC721, ERC721URIStorage, Ownable {
     {
         if (hardCap > 0) {
             uint256 reached = _tokenIdCounter.current() + 1;
-            require(reached <= hardCap, "SimpleNFT: Hard cap reached");
+            require(reached <= hardCap, "BedNBeer: Hard cap reached");
         }
         _tokenIdCounter.increment();
         uint256 newTokenId = _tokenIdCounter.current();

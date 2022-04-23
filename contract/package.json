@@ -1,7 +1,7 @@
 {
-  "name": "simple-nft-contract",
+  "name": "bednbeer-nft-contract",
   "version": "1.0.0",
-  "description": "Simple Smart Contract.",
+  "description": "BednBeer Smart Contract.",
   "scripts": {
     "test": "npx hardhat test",
     "network": "node scripts/_network.js",

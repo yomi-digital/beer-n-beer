@@ -1,4 +1,4 @@
-# Simple NFT example contract
+# BnB NFT contract
 
 ## Requirements
 
